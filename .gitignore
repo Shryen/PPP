@@ -1,0 +1,40 @@
+# Ignore build folders
+/x64/
+/Debug/
+/Release/
+/bin/
+/obj/
+
+# Ignore Visual Studio files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore temporary files
+*.log
+*.tmp
+*.cache
+*.pdb
+*.idb
+*.opendb
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.lib
+*.obj
+
+# Ignore system files
+Thumbs.db
+Desktop.ini
+
+# Allow source and docs
+!*.cpp
+!*.h
+!*.md
+!*.png
+
+
+# Visual Studio cache
+.vs/
