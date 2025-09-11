@@ -1,34 +1,49 @@
 #include "std_lib_facilities.h"
 
-void Operators(double n);
 
 int main()
 {
-    /*
-    cout << "Please enter your first name and age: \n";
     string FirstName = "";
-    double Age = 0;
+    cout << "What is your name? ";
     cin >> FirstName;
-    cin >> Age;
-    cout << "Hello, " << FirstName << "! " << Age*12 << " months old!\n";
-    */
-    cout << "Please enter a floating-point value: ";
-    double n = 0.0;
-    cin >> n;
-    Operators(n);
 
+    string Target;
+    cout << "Hello " << FirstName << " who would you like to write for? ";
+    cin >> Target;
 
+    cout << "Dear " << Target << ", \n";
+
+    string FriendName = " ";
+    cout << "Name a friend: ";
+    cin >> FriendName;
+
+    char friend_sex = ' ';
+    cout << "Please give the friend's sex. M if male F if female: ";
+    cin >> friend_sex;
+
+    if (friend_sex == 'M')
+        cout << "If you see " << FriendName << " please ask him to call me!\n";
+    if (friend_sex == 'F')
+        cout << "If you see " << FriendName << " please ask her to call me!\n";
+
+    int age = 0;
+    cout << "Target's age: ";
+    cin >> age;
+    if (age <= 0 || age > 120) {
+        simple_error("You're kidding!");
+    }
+    cout << "I heard you just had your birthday and you are " << age << " years old!\n";
+    if (age <= 12)
+        cout << "Next year you will be " << age + 1 << "\n";
+    if (age == 17)
+        cout << "Next year you will be able to vote!\n";
+    if (age >= 70)
+        cout << "I hope you're enjoying your retirement!\n";
+
+    cout << "Yours sincerely, __ " << FirstName;
+    
+    cout << '\n';
     keep_window_open();
     return 0;
 }
 
-void Operators(double n) {
-    cout << "n == " << n
-        << "\nn+1==" << n + 1
-        << "\nthree times n == " << 3 * n
-        << "\ntwice n == " << n + n
-        << "\nsquared n == " << n * n
-        << "\nhalf of n == " << n / 2
-        << "\nsquare root of n == " << sqrt(n)
-        << "\n";
-}
