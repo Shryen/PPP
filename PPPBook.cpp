@@ -3,21 +3,17 @@
 
 int main()
 {
-    int a{ 0 };
-    cout << "Please enter a number between 1-10!\n";
-    cin >> a;
-    switch (a) {
-    case 1: case 3: case 5: case 7: case 9:
-        cout << a << " is odd!";
-        break;
-    case 2: case 4: case 6: case 8: case 10:
-        cout << a << " is even!";
-        break;
-    default:
-        cout << a << " is not a digit or not between 1 and 10!";
-        break;
-    }
-    
+    vector<double> temps;
+    for (double temp; cin >> temp;)
+        temps.push_back(temp);
+
+    double sum = 0;
+    for (double x : temps) sum += x;
+    cout << "Avaregae temperature: " << sum / temps.size() << "\n";
+
+    sort(temps);
+    cout << "Median temperature: " << temps[temps.size() / 2] << "\n";
+
     cout << '\n';
     keep_window_open();
     return 0;
